@@ -1,0 +1,41 @@
+.mail-opening {
+  margin-top: 1rem;
+}
+
+/* Each row: label + input */
+.mail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+}
+
+/* Zebra striping */
+.mail-row:nth-of-type(odd) {
+  background: #fafafa;
+}
+
+/* Label flexes, input fixed width */
+.mail-label {
+  flex: 1;
+  color: #333;
+}
+.mail-input {
+  width: 80px;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #fff;
+  text-align: right;
+}
+
+/* Total row styling */
+.mail-total {
+  background: #f2f2f2;
+  font-weight: 600;
+  border-top: 1px solid #ddd;
+}
+.mail-total-value {
+  min-width: 80px;
+  text-align: right;
+}

@@ -1,0 +1,108 @@
+/* src/components/Attachments.css */
+
+.attachments {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+  
+  /* Each column wrapper */
+  .attach-column {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 1rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+  
+  /* Header row: title + “+” */
+  .attach-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  .attach-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  /* “+” button */
+  .attach-add {
+    background: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 1.2rem;
+    line-height: 0;
+    color: #333;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .attach-add:hover {
+    background: #e0e0e0;
+  }
+  
+  /* List & items */
+  .attach-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    counter-reset: item;
+  }
+  .attach-column li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    position: relative;
+  }
+  .attach-column li::before {
+    counter-increment: item;
+    content: counter(item) ".";
+    width: 1.5rem;
+    text-align: right;
+    margin-right: 0.5rem;
+    color: #555;
+  }
+  
+  /* Number inputs */
+  .attach-column input {
+    flex: 1;
+    padding: 0.4rem 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: #fafafa;
+    font-size: 1rem;
+  }
+  
+  /* “–” remove button */
+  .attach-remove {
+    background: none;
+    border: none;
+    color: #888;
+    font-size: 1.2rem;
+    margin-left: 0.5rem;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+  .attach-remove:hover {
+    color: #c00;
+  }
+  
+  /* Checklist summary (NATP/RTD/COI counts) */
+.attachments-summary {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+.attachments-summary span {
+  background: #f5f5f5;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+}

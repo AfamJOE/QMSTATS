@@ -1,0 +1,9 @@
+.invites-container { padding: 1rem; }
+.invites-empty    { font-style: italic; color: #666; }
+.invite-item {
+  border-bottom: 1px solid #ddd;
+  padding: 0.5rem 0;
+}
+.invite-actions button {
+  margin-left: 0.5rem;
+}

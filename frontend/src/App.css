@@ -1,0 +1,61 @@
+/* Nav container */
+.nav-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #f9f9f9;
+  padding: 0.5rem 1rem;
+}
+
+/* Make the “Stats ▾” look like the other links */
+.nav-item.dropdown .nav-link {
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  color: #333;
+  padding: 0.5rem 0.75rem;
+  position: relative;
+}
+.nav-item.dropdown .nav-link.active,
+.nav-item.dropdown .nav-link:hover {
+  color: #000;
+  font-weight: 600;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 4px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  list-style: none;
+  padding: 0;
+  min-width: 120px;
+  z-index: 100;
+}
+
+.dropdown-menu li {
+  margin: 0;
+}
+.dropdown-link {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  background: none;
+  border: none;
+  text-align: left;
+  font: inherit;
+  color: #333;
+  cursor: pointer;
+}
+.dropdown-link:hover {
+  background: #f0f0f0;
+  color: #000;
+}
+
+

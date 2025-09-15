@@ -1,0 +1,162 @@
+.rejects-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Each application row: a 4‑column grid */
+.reject-row {
+  display: grid;
+  grid-template-columns: min-content min-content 1fr min-content;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+  position: relative;
+  counter-increment: row;
+}
+
+.reject-row::before {
+  content: counter(row) ".";
+  position: absolute;
+  left: -1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #555;
+  width: 1.5rem;
+  text-align: right;
+}
+
+/* 1) Application count + remove */
+.row-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.row-header input {
+  width: 160px;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.remove-application-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #888;
+  cursor: pointer;
+}
+.remove-application-btn:hover {
+  color: #c00;
+}
+
+/* 2) Checklist */
+.row-checklist {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.row-checklist label {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.85rem;
+  color: #333;
+}
+
+/* 3) Reasons + add/remove in one line */
+.reasons-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* each reason selector + remove button inline */
+.reason-item {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.reason-item select {
+  padding: 0.3rem 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #fff;
+  font-size: 0.9rem;
+}
+.remove-reason-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #888;
+  cursor: pointer;
+}
+.remove-reason-btn:hover {
+  color: #c00;
+}
+
+/* “+” button at end of reasons */
+.add-reason-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #333;
+  cursor: pointer;
+}
+.add-reason-btn:hover {
+  color: #000;
+}
+
+/* Alternate row backgrounds for readability */
+.reject-row:nth-of-type(odd) {
+  background: #fafafa;
+}
+.reject-row:nth-of-type(even) {
+  background: #f2f2f2;
+}
+
+/* Wraps the whole panel */
+.rejects-wrapper {
+  margin-top: 1rem;
+}
+/* Section title */
+.rejects-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+.rejects-title .count {
+  font-weight: 400;
+  color: #555;
+  margin-left: 0.5rem;
+}
+
+/* Header counts */
+.reject-col h3,
+.reason-col h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.reject-col h3 .count,
+.reason-col h3 .count {
+  font-weight: 400;
+  color: #555;
+}
+
+.rejects-summary {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+.rejects-summary span {
+  background: #f5f5f5;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+}

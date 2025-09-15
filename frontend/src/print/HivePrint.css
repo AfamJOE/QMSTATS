@@ -1,0 +1,102 @@
+/* frontend/src/print/HivePrint.css */
+
+/* Vector-friendly printing */
+* { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+@page {
+  size: A3 landscape;          /* wide grids fit naturally */
+  margin: 10mm 10mm 14mm 10mm; /* footer room */
+}
+
+html, body {
+  background: #fff !important;
+}
+
+.print-wrap {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  color: #111827;
+  padding: 0;
+}
+
+/* Header / meta */
+.print-header .title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 6px 0;
+}
+.print-header .meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  font-size: 12px;
+  color: #374151;
+  margin-bottom: 12px;
+}
+
+/* Charts grid (SVG stays sharp in PDF) */
+.print-charts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 8px 0 14px;
+}
+.chart h3 {
+  font-size: 14px;
+  margin: 0 0 6px 0;
+  color: #111827;
+  font-weight: 600;
+}
+.chart {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 8px;
+  page-break-inside: avoid;
+}
+
+/* Table w/ repeating header + no broken rows */
+.print-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  table-layout: fixed;     /* predictable column wrapping */
+}
+.print-table thead { display: table-header-group; }
+.print-table tfoot { display: table-footer-group; }
+.print-table tr { break-inside: avoid; page-break-inside: avoid; }
+.print-table th, .print-table td {
+  border: 1px solid #e5e7eb;
+  padding: 6px 8px;
+  vertical-align: top;
+}
+.print-table th {
+  background: #f3f4f6;
+  font-weight: 700;
+  text-align: left;
+}
+.mono { font-variant-numeric: tabular-nums; font-family: ui-monospace, Menlo, Consolas, monospace; }
+
+/* Footer with page x of y */
+.print-footer {
+  position: running(footer);
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #4b5563;
+  margin-top: 8px;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 6px;
+}
+
+/* Some Chromium engines honor these counters in @page margin boxes: */
+@page {
+  @bottom-left  { content: "Hive report"; }
+  @bottom-right { content: "Page " counter(page) " of " counter(pages); }
+}
+.page-counter .pageNumber { counter-reset: page; }
+.page-counter .totalPages { counter-reset: pages; }
+
+/* Screen preview niceties */
+@media screen {
+  body { background: #f3f4f6; }
+  .print-wrap { margin: 16px; background: #fff; padding: 16px; border-radius: 12px; }
+}

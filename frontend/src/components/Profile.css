@@ -1,0 +1,55 @@
+.profile-container {
+  max-width: 680px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.06);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+.profile-container h1 { margin: 0 0 1rem; }
+.profile-container h2 { margin: 1.5rem 0 .75rem; }
+
+.profile-card, .leader-card {
+  border: 1px solid #e7e9ee;
+  border-radius: 10px;
+  padding: 1rem;
+  background: #fafbfc;
+}
+.profile-card .row {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: .75rem;
+  padding: .4rem 0;
+}
+.profile-card label {
+  color: #666;
+}
+.leader-card .help { color: #666; margin: 0 0 .75rem; }
+
+.leader-picker { position: relative; }
+.leader-picker input {
+  width: 100%;
+  padding: .75rem 1rem;
+  border: 1px solid #cfd6e4;
+  border-radius: 8px;
+}
+.leader-card .suggestions {
+  position: absolute;
+  left: 0; right: 0; top: calc(100% + 4px);
+  background: #fff; border: 1px solid #ddd; border-radius: 8px;
+  max-height: 240px; overflow: auto; z-index: 10; margin: 0; padding: 0; list-style: none;
+  box-shadow: 0 6px 16px rgba(0,0,0,.08);
+}
+.leader-card .suggestions li {
+  padding: .6rem .9rem; cursor: pointer; display: grid; grid-template-columns: 1fr auto; gap: .5rem;
+}
+.leader-card .suggestions li:hover { background: #f6f8fb; }
+.leader-card .suggestions .name { font-weight: 600; }
+.leader-card .suggestions .email { color: #666; }
+
+.current-leader { margin-top: .75rem; display: grid; grid-template-columns: 160px 1fr; gap: .75rem; align-items: center; }
+.btn-save {
+  margin-top: .75rem; padding: .6rem 1rem; border: 0; border-radius: 8px; background: #007bff; color: #fff; cursor: pointer;
+}
+.btn-save:disabled { background: #a8c7f5; cursor: not-allowed; }

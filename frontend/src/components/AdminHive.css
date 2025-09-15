@@ -1,0 +1,667 @@
+/*frontend\src\components\AdminHive.css  */
+.hive {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.hive-header {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 12px;
+}
+.hive-title {
+  margin: 0;
+}
+.hive-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #555;
+  font-size: 0.9rem;
+}
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #bbb;
+  display: inline-block;
+}
+.dot.on {
+  background: #33c24d;
+}
+.hive-actions button {
+  margin-left: 8px;
+}
+
+.hive-filters .row {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.2fr 1.2fr auto auto;
+  gap: 8px;
+}
+.hive-filters .input {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+.hive-filters .chk {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #555;
+}
+.hive-filters .apply {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #f6f6f6;
+  cursor: pointer;
+}
+
+.hive-body {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 12px;
+}
+
+.table-card {
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.table-head,
+.table-row {
+  display: grid;
+  grid-template-columns: 1.2fr 1.5fr 0.8fr 1fr 1.5fr 1fr 0.7fr 1.2fr 1.4fr;
+  gap: 8px;
+  padding: 10px 12px;
+  align-items: center;
+}
+.table-head {
+  background: #f7f7f9;
+  font-weight: 600;
+  border-bottom: 1px solid #eee;
+}
+.table-row:nth-child(even) {
+  background: #fafbfc;
+}
+.mono {
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+}
+
+.pager {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 10px;
+  border-top: 1px solid #eee;
+  background: #fafafa;
+}
+.pager button {
+  padding: 4px 10px;
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 6px;
+}
+
+.side {
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  padding: 12px;
+}
+.side h3 {
+  margin-top: 4px;
+}
+.chart-wrap {
+  height: 220px;
+}
+.reasons {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+  display: grid;
+  gap: 6px;
+}
+.reasons li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  padding: 6px 8px;
+  background: #f7f7f9;
+  border-radius: 6px;
+}
+.reasons .count {
+  color: #333;
+  font-weight: 600;
+}
+.hive-guard {
+  padding: 2rem;
+}
+.loading,
+.empty {
+  padding: 12px;
+  color: #666;
+}
+
+/* --- Sub-nav tabs --- */
+.subnav {
+  display: flex;
+  gap: 8px;
+  padding: 0 0 8px 0;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 12px;
+}
+.subnav-tab {
+  appearance: none;
+  border: 1px solid #ddd;
+  background: #f8f8f8;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 0.92rem;
+  cursor: pointer;
+}
+.subnav-tab.active {
+  background: #fff;
+  border-color: #bbb;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
+}
+
+/* utility widths used in heads/rows */
+.w-70 {
+  width: 70px;
+}
+.w-80 {
+  width: 80px;
+}
+.w-90 {
+  width: 90px;
+}
+.w-110 {
+  width: 110px;
+}
+.w-140 {
+  width: 140px;
+}
+.w-240 {
+  width: 240px;
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.subnav {
+  display: flex;
+  gap: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 12px;
+}
+.subnav-tab {
+  border: 1px solid #ddd;
+  background: #f8f8f8;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 0.92rem;
+  cursor: pointer;
+}
+.subnav-tab.active {
+  background: #fff;
+  border-color: #bbb;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
+}
+
+/* widths & truncation */
+.w-70 {
+  width: 70px;
+}
+.w-80 {
+  width: 80px;
+}
+.w-90 {
+  width: 90px;
+}
+.w-110 {
+  width: 110px;
+}
+.w-140 {
+  width: 140px;
+}
+.w-240 {
+  width: 240px;
+}
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ── Layout bumps ───────────────────────────────────────────── */
+.hive-body {
+  display: grid;
+  grid-template-columns: 1fr minmax(340px, 380px);
+  gap: 16px; /* was 12px */
+}
+
+/* Allow graceful horizontal scroll if grid min-width exceeds card width */
+.table-card {
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  overflow: auto; /* was hidden */
+}
+
+/* Better numeric alignment */
+.mono {
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── SUMMARY grid (the main overview table) ─────────────────── */
+/* Targets when data-view="summary" (see JSX tweak above) */
+.table-card[data-view="summary"] .table-head,
+.table-card[data-view="summary"] .table-row {
+  display: grid;
+  /* More generous, flexible columns: */
+  grid-template-columns:
+    minmax(160px, 1.2fr) /* Client */
+    minmax(220px, 1.6fr) /* Email */
+    minmax(110px, 0.8fr) /* Date */
+    minmax(140px, 1fr) /* Time */
+    minmax(260px, 1.6fr) /* File Creation counts */
+    minmax(160px, 1fr) /* Attachments */
+    minmax(100px, 0.6fr) /* Rejects */
+    minmax(240px, 1.4fr) /* Checklist */
+    minmax(220px, 1.5fr); /* Team Leader */
+  gap: 14px; /* was 8px */
+  padding: 12px 16px; /* was 10px 12px */
+  align-items: center;
+  line-height: 1.35;
+  /* Keep things breathable on smaller screens via scroll */
+  min-width: 1200px;
+}
+
+.table-head {
+  background: #f7f7f9;
+  font-weight: 600;
+  border-bottom: 1px solid #eee;
+}
+
+.table-row:nth-child(even) {
+  background: #fafbfc;
+}
+
+/* ── TAB grids (File Creation, Attachments, Rejects, Mail) ───── */
+/* Auto-fit columns, roomy gaps, and a comfortable min width */
+.table-card[data-view]:not([data-view="summary"]) .table-head,
+.table-card[data-view]:not([data-view="summary"]) .table-row {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(140px, 1fr);
+  grid-template-columns: none; /* use auto-columns instead */
+  gap: 14px;
+  padding: 12px 16px;
+  align-items: center;
+  line-height: 1.35;
+  min-width: 1020px; /* prevent squish; allow horizontal scroll if needed */
+}
+
+/* Keep existing utility widths (they’ll cap/expand nicely with minmax) */
+.w-70 {
+  width: 70px;
+}
+.w-80 {
+  width: 80px;
+}
+.w-90 {
+  width: 90px;
+}
+.w-110 {
+  width: 110px;
+}
+.w-140 {
+  width: 140px;
+}
+.w-240 {
+  width: 240px;
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Pager and side stay the same, but you can bump padding a touch */
+.pager {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* was 8px */
+  padding: 12px; /* was 10px */
+  border-top: 1px solid #eee;
+  background: #fafafa;
+}
+.pager button {
+  padding: 6px 12px; /* was 4px 10px */
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 6px;
+}
+
+/* Sub-nav unchanged, included here for completeness */
+.subnav {
+  display: flex;
+  gap: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 12px;
+}
+.subnav-tab {
+  appearance: none;
+  border: 1px solid #ddd;
+  background: #f8f8f8;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 0.92rem;
+  cursor: pointer;
+}
+.subnav-tab.active {
+  background: #fff;
+  border-color: #bbb;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
+}
+
+/* Clickable value cell */
+.link-cell {
+  appearance: none;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  color: #0b5ed7;
+  text-decoration: underline;
+  font: inherit; /* keep monospace from parent .mono */
+}
+.link-cell:hover {
+  text-decoration: none;
+}
+
+/* Minimal modal */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-card {
+  background: #fff;
+  width: min(92vw, 720px);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border-bottom: 1px solid #eee;
+}
+.modal-header h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+.modal-close {
+  appearance: none;
+  border: none;
+  background: none;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  color: #555;
+}
+
+.modal-meta {
+  display: grid;
+  gap: 4px;
+  padding: 10px 14px 0 14px;
+  font-size: 0.92rem;
+  color: #444;
+}
+
+.modal-body {
+  padding: 10px 14px 14px 28px;
+  max-height: 55vh;
+  overflow: auto;
+}
+
+.reasons-list {
+  margin: 0;
+  padding-left: 1.1rem; /* bullets */
+}
+.reasons-list li {
+  margin: 4px 0;
+  line-height: 1.35;
+}
+
+.modal-footer {
+  padding: 10px 14px;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  background: #fafafa;
+}
+.modal-footer .btn {
+  padding: 6px 12px;
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Sorting UI */
+.sorter {
+  display: inline-flex;
+  gap: 2px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+.sort-btn {
+  appearance: none;
+  border: 1px solid #ddd;
+  background: #fff;
+  padding: 0 4px;
+  line-height: 1;
+  font-size: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #555;
+}
+.sort-btn.active {
+  border-color: #aaa;
+  background: #f4f6ff;
+  color: #1f6feb;
+}
+.sort-btn:hover {
+  background: #f8f8f8;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   Quick Find toolbar
+   ────────────────────────────────────────────────────────────── */
+
+.table-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 10px 0 6px;
+}
+
+.quickfind {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-width: 280px;
+  width: min(520px, 100%);
+}
+
+.quickfind-input {
+  width: 100%;
+  height: 36px;
+  padding: 8px 36px 8px 12px; /* room for the clear button */
+  border: 1px solid #d1d5db;  /* gray-300 */
+  border-radius: 9px;
+  background: #fff;
+  color: #111827;             /* gray-900 */
+  font-size: 14px;
+  line-height: 1.2;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+
+.quickfind-input::placeholder {
+  color: #9ca3af;             /* gray-400 */
+}
+
+.quickfind-input:focus {
+  outline: none;
+  border-color: #3b82f6;       /* blue-500 */
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, .25);
+}
+
+.quickfind-clear {
+  position: absolute;
+  right: 8px;
+  height: 28px;
+  width: 28px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #6b7280;             /* gray-500 */
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  display: inline-grid;
+  place-items: center;
+  transition: background .15s ease, color .15s ease;
+}
+
+.quickfind-clear:hover {
+  background: #f3f4f6;        /* gray-100 */
+  color: #374151;             /* gray-700 */
+}
+
+.quickfind-clear:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, .35);
+}
+
+.quickfind-count {
+  margin-left: 10px;
+  font-size: 12px;
+  color: #6b7280;             /* gray-500 */
+  user-select: none;
+}
+
+/* Sort buttons used in table heads */
+.sorter {
+  display: inline-flex;
+  vertical-align: middle;
+  margin-left: 6px;
+}
+
+.sort-btn {
+  appearance: none;
+  border: 1px solid #e5e7eb;  /* gray-200 */
+  background: #fff;
+  color: #6b7280;             /* gray-500 */
+  height: 18px;
+  width: 18px;
+  line-height: 1;
+  font-size: 10px;
+  padding: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 2px;
+  display: inline-grid;
+  place-items: center;
+  transition: border-color .15s ease, color .15s ease, background .15s ease;
+}
+
+.sort-btn:hover {
+  background: #f9fafb;        /* gray-50 */
+  color: #374151;             /* gray-700 */
+}
+
+.sort-btn.active {
+  border-color: #3b82f6;      /* blue-500 */
+  color: #1f2937;             /* gray-800 */
+  background: #eef2ff;        /* indigo-50-ish */
+}
+
+.sort-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, .35);
+}
+
+/* Optional: make toolbar wrap nicely on small screens */
+@media (max-width: 720px) {
+  .table-toolbar {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .quickfind {
+    width: 100%;
+  }
+}
+
+/* Optional dark mode polish */
+@media (prefers-color-scheme: dark) {
+  .quickfind-input {
+    background: #0b1020;
+    color: #e5e7eb;
+    border-color: #293047;
+  }
+  .quickfind-input::placeholder {
+    color: #8691a7;
+  }
+  .quickfind-clear {
+    color: #94a3b8;
+  }
+  .quickfind-clear:hover {
+    background: #11172a;
+    color: #e5e7eb;
+  }
+  .quickfind-count {
+    color: #9aa5bd;
+  }
+  .sort-btn {
+    background: #0b1020;
+    border-color: #283049;
+    color: #9aa5bd;
+  }
+  .sort-btn:hover {
+    background: #11172a;
+    color: #e5e7eb;
+  }
+  .sort-btn.active {
+    background: #14203d;
+    border-color: #4361ee;
+    color: #f1f5f9;
+  }
+}
+
+

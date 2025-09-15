@@ -1,0 +1,182 @@
+/* src/components/History.css */
+
+.history-list {
+  padding: 1rem;
+}
+
+.history-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  background-color: #fafafa;
+}
+
+/* Left side = timestamp, Right side = actions */
+.history-item .timestamp-container {
+  flex: 1;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Actions container with spacing */
+.history-actions {
+  display: flex;
+  gap: 0.6rem; /* equal space between buttons */
+  margin-left: 1.5rem; /* spacing away from timestamp */
+}
+
+/* Buttons: greyscale, minimal */
+.history-actions button {
+  padding: 0.4rem 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  background-color: #f7f7f7;
+  color: #333;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.history-actions button:hover {
+  background-color: #e4e4e4;
+  transform: translateY(-1px);
+}
+
+/* Delete: slightly darker on hover */
+.history-actions .btn-delete:hover {
+  background-color: #dcdcdc;
+  color: #000;
+}
+
+.read-only-banner {
+  padding: 0.5rem;
+  background-color: #ffefd5;
+  color: #a0522d;
+  text-align: center;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+/* Header: title + search */
+.history-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 0.75rem;
+}
+
+.history-search {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.history-search-input {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  min-width: 280px;
+  background: #fff;
+  font-size: 0.95rem;
+}
+
+.history-search-input:focus {
+  outline: none;
+  border-color: #b9c6ff;
+  box-shadow: 0 0 0 3px rgba(66, 119, 255, 0.12);
+}
+
+.history-search-clear {
+  appearance: none;
+  border: 1px solid #ddd;
+  background: #f8f8f8;
+  border-radius: 6px;
+  padding: 0.35rem 0.55rem;
+  font-size: 0.95rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.history-search-clear:hover {
+  background: #efefef;
+}
+
+.history-search-count {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* (existing) */
+.history-list {
+  padding: 1rem;
+}
+
+.history-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  background-color: #fafafa;
+}
+
+/* Left side = timestamp, Right side = actions */
+.timestamp-container {
+  flex: 1;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Actions container with spacing */
+.history-actions {
+  display: flex;
+  gap: 0.6rem;
+  margin-left: 1.5rem;
+}
+
+/* Buttons: greyscale, minimal */
+.history-actions button {
+  padding: 0.4rem 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  background-color: #f7f7f7;
+  color: #333;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.history-actions button:hover {
+  background-color: #e4e4e4;
+  transform: translateY(-1px);
+}
+
+/* Delete: slightly darker on hover */
+.history-actions .btn-delete:hover {
+  background-color: #dcdcdc;
+  color: #000;
+}
+
+.history-empty {
+  color: #666;
+  padding: 0.25rem 0.1rem 0.5rem;
+}
+
+/* (existing) */
+.read-only-banner {
+  padding: 0.5rem;
+  background-color: #ffefd5;
+  color: #a0522d;
+  text-align: center;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}

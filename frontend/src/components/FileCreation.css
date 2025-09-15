@@ -1,0 +1,194 @@
+/* src/components/FileCreation.css */
+
+/* Container holds the two major sections */
+.file-creation {
+  display: grid;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+/* Each major section is two columns */
+.file-creation .section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+/* Shared column styling */
+.column {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 1rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+/* Header: title + add-family button */
+.column-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.column-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Round “+” button */
+.add-btn,
+.add-subrow-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  background: #f5f5f5;
+  font-size: 1.25rem;
+  color: #333;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.add-btn:hover,
+.add-subrow-btn:hover {
+  background: #e0e0e0;
+}
+
+/* Numbered list inside each column */
+.column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: item;
+}
+
+.column li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  position: relative;
+}
+
+.column li::before {
+  counter-increment: item;
+  content: counter(item) ".";
+  width: 1.5rem;
+  text-align: right;
+  margin-right: 0.5rem;
+  color: #555;
+}
+
+/* Input fields */
+.column input {
+  flex: 1;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #fafafa;
+  font-size: 1rem;
+}
+
+/* “–” remove button */
+.remove-btn {
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 1.25rem;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.remove-btn:hover {
+  color: #c00;
+}
+
+/* Family sub-groups */
+/* .family-group {
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+} */
+
+/* Keep border, padding, etc., but no base background */
+.family-group {
+    border: 1px solid #eee;
+    border-radius: 4px;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  
+
+/* Family header: “Family 01:” + remove-group button */
+.family-group-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.family-group-header h4 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+/* “+ Add Row” inside each family-group */
+.add-subrow-btn {
+  margin-top: 0.5rem;
+  background: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.add-subrow-btn:hover {
+  background: #e0e0e0;
+}
+
+  /* Alternate backgrounds for better visual grouping */
+  .family-section .family-group:nth-of-type(odd) {
+    background: #fafafa;
+  }
+  
+  .family-section .family-group:nth-of-type(even) {
+    background: #f2f2f2;
+  }
+
+
+  .checklist {
+    display: flex;
+    gap: 0.5rem;
+    margin-left: 1rem; /* or adjust for spacing */
+  }
+  .checklist label {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.8rem;
+  }
+  
+  /* Checklist summary (NATP/RTD/COI counts) */
+.file-creation-summary {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+.file-creation-summary span {
+  background: #f5f5f5;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+}
