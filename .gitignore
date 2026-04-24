@@ -1,1 +1,26 @@
 node_modules/
+.env
+.env.*
+backend/.env
+frontend/.env
+frontend/.env.*
+dist/
+*.log
+
+# Secrets
+.env
+.env.*
+backend/.env
+frontend/.env
+frontend/.env.*
+
+# Dependencies/build
+node_modules/
+dist/
+*.log
+
+# Personal notes / exported text files
+*.txt
+deploy/
+notes/
+railway/
