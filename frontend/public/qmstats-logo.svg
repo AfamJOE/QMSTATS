@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 1365" role="img" aria-labelledby="title desc">
+  <title id="title">QMStats Logo</title>
+  <desc id="desc">QMStats logo with a monitor icon and upward chart line beside the QMSTATS wordmark.</desc>
+  <defs>
+    <linearGradient id="brandGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0A8CFF"/>
+      <stop offset="55%" stop-color="#00B8E6"/>
+      <stop offset="100%" stop-color="#00E0D4"/>
+    </linearGradient>
+    <filter id="softGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Transparent background -->
+  <g transform="translate(382 452)" fill="none" stroke="url(#brandGradient)" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" filter="url(#softGlow)">
+    <!-- monitor -->
+    <rect x="0" y="0" width="310" height="220" rx="28"/>
+    <line x1="70" y1="260" x2="240" y2="260"/>
+    <line x1="125" y1="220" x2="110" y2="260"/>
+    <line x1="185" y1="220" x2="200" y2="260"/>
+
+    <!-- chart line -->
+    <polyline points="42,142 95,92 152,133 202,102 266,42"/>
+    <circle cx="42" cy="142" r="17" fill="#00BFEA" stroke="none"/>
+    <circle cx="95" cy="92" r="17" fill="#00BFEA" stroke="none"/>
+    <circle cx="152" cy="133" r="17" fill="#00BFEA" stroke="none"/>
+    <circle cx="202" cy="102" r="17" fill="#00BFEA" stroke="none"/>
+    <circle cx="266" cy="42" r="17" fill="#00D8D6" stroke="none"/>
+  </g>
+
+  <!-- wordmark -->
+  <text x="735" y="635"
+        font-family="Arial Black, Montserrat, Arial, sans-serif"
+        font-size="134"
+        font-weight="900"
+        letter-spacing="3"
+        fill="url(#brandGradient)"
+        filter="url(#softGlow)">QMSTATS</text>
+</svg>
