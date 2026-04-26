@@ -150,63 +150,65 @@ export default function Register() {
   };
 
   return (
-    <div className="auth-container">
-      <h2>{t("auth.registerTitle")}</h2>
+    <div className="auth-page">
+      <div className="auth-container">
+        <h2>{t("auth.registerTitle")}</h2>
 
-      <form className="auth-form" onSubmit={handleSubmit}>
-        <label htmlFor="firstName">{t("auth.firstName")}</label>
-        <input
-          id="firstName"
-          type="text"
-          value={firstName}
-          onChange={(e) => setFirstName(e.target.value)}
-          required
-        />
+        <form className="auth-form" onSubmit={handleSubmit}>
+          <label htmlFor="firstName">{t("auth.firstName")}</label>
+          <input
+            id="firstName"
+            type="text"
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+            required
+          />
 
-        <label htmlFor="surname">{t("auth.surname")}</label>
-        <input
-          id="surname"
-          type="text"
-          value={surname}
-          onChange={(e) => setSurname(e.target.value)}
-          required
-        />
+          <label htmlFor="surname">{t("auth.surname")}</label>
+          <input
+            id="surname"
+            type="text"
+            value={surname}
+            onChange={(e) => setSurname(e.target.value)}
+            required
+          />
 
-        <label htmlFor="email">{t("auth.email")}</label>
-        <input
-          id="email"
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
+          <label htmlFor="email">{t("auth.email")}</label>
+          <input
+            id="email"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
 
-        <label htmlFor="password">{t("auth.password")}</label>
-        <input
-          id="password"
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
+          <label htmlFor="password">{t("auth.password")}</label>
+          <input
+            id="password"
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
 
-        <label htmlFor="confirm">{t("auth.confirmPassword")}</label>
-        <input
-          id="confirm"
-          type="password"
-          value={confirm}
-          onChange={(e) => setConfirm(e.target.value)}
-          required
-        />
+          <label htmlFor="confirm">{t("auth.confirmPassword")}</label>
+          <input
+            id="confirm"
+            type="password"
+            value={confirm}
+            onChange={(e) => setConfirm(e.target.value)}
+            required
+          />
 
-        <button type="submit">{t("auth.register")}</button>
+          <button type="submit">{t("auth.register")}</button>
 
-        {error && <p className="auth-error">{error}</p>}
-        {success && <p className="auth-success">{success}</p>}
-      </form>
+          {error && <p className="auth-error">{error}</p>}
+          {success && <p className="auth-success">{success}</p>}
+        </form>
 
-      <div className="auth-link">
-        {t("auth.alreadyAccount")} <Link to="/">{t("auth.loginHere")}</Link>.
+        <div className="auth-link">
+          {t("auth.alreadyAccount")} <Link to="/">{t("auth.loginHere")}</Link>.
+        </div>
       </div>
     </div>
   );

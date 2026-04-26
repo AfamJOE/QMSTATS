@@ -67,8 +67,9 @@
 
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import api from "../utils/axios";
 import { useTranslation } from "react-i18next";
+import api from "../utils/axios";
+import LanguageToggle from "./LanguageToggle";
 
 export default function Login() {
   const { t } = useTranslation();
@@ -95,7 +96,10 @@ export default function Login() {
   };
 
   return (
-    <div className="auth-container">
+    <div className="auth-page">
+  <div className="auth-container">
+      <LanguageToggle />
+
       <h2>{t("auth.loginTitle")}</h2>
 
       <form className="auth-form" onSubmit={handleSubmit}>
@@ -126,6 +130,7 @@ export default function Login() {
         {t("auth.noAccount")}{" "}
         <Link to="/register">{t("auth.registerHere")}</Link>.
       </div>
+    </div>
     </div>
   );
 }
