@@ -103,11 +103,16 @@
 //   );
 // }
 
+// src/components/Register.jsx
+
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import api from "../utils/axios";
+import { useTranslation } from "react-i18next";
 
 export default function Register() {
+  const { t } = useTranslation();
+
   const [firstName, setFirstName] = useState("");
   const [surname, setSurname] = useState("");
   const [email, setEmail] = useState("");
@@ -122,10 +127,11 @@ export default function Register() {
     setError("");
 
     if (password !== confirm) {
-      return setError("Passwords do not match");
+      return setError(t("auth.passwordMismatch"));
     }
+
     if (!firstName || !surname) {
-      return setError("First name and surname are required");
+      return setError(t("auth.nameRequired"));
     }
 
     try {
@@ -135,18 +141,20 @@ export default function Register() {
         firstName,
         surname,
       });
-      setSuccess("Registration successful! Redirecting to login…");
+
+      setSuccess(t("auth.registrationSuccess"));
       setTimeout(() => navigate("/"), 1500);
     } catch (err) {
-      setError(err.response?.data?.error || "Registration failed");
+      setError(err.response?.data?.error || t("auth.registrationFailed"));
     }
   };
 
   return (
     <div className="auth-container">
-      <h2>QMStats Register</h2>
+      <h2>{t("auth.registerTitle")}</h2>
+
       <form className="auth-form" onSubmit={handleSubmit}>
-        <label htmlFor="firstName">First Name</label>
+        <label htmlFor="firstName">{t("auth.firstName")}</label>
         <input
           id="firstName"
           type="text"
@@ -155,7 +163,7 @@ export default function Register() {
           required
         />
 
-        <label htmlFor="surname">Surname</label>
+        <label htmlFor="surname">{t("auth.surname")}</label>
         <input
           id="surname"
           type="text"
@@ -164,7 +172,7 @@ export default function Register() {
           required
         />
 
-        <label htmlFor="email">Email</label>
+        <label htmlFor="email">{t("auth.email")}</label>
         <input
           id="email"
           type="email"
@@ -173,7 +181,7 @@ export default function Register() {
           required
         />
 
-        <label htmlFor="password">Password</label>
+        <label htmlFor="password">{t("auth.password")}</label>
         <input
           id="password"
           type="password"
@@ -182,7 +190,7 @@ export default function Register() {
           required
         />
 
-        <label htmlFor="confirm">Confirm Password</label>
+        <label htmlFor="confirm">{t("auth.confirmPassword")}</label>
         <input
           id="confirm"
           type="password"
@@ -191,13 +199,14 @@ export default function Register() {
           required
         />
 
-        <button type="submit">Register</button>
+        <button type="submit">{t("auth.register")}</button>
+
         {error && <p className="auth-error">{error}</p>}
         {success && <p className="auth-success">{success}</p>}
       </form>
 
       <div className="auth-link">
-        Already have an account? <Link to="/">Log in here</Link>.
+        {t("auth.alreadyAccount")} <Link to="/">{t("auth.loginHere")}</Link>.
       </div>
     </div>
   );

@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 import NewStatModal from "./NewStatModal";
 import Timestamp from "./Timestamp";
@@ -19,12 +20,13 @@ import "./Stats.css";
 import "./Charts.css";
 
 export default function Stats({ mode = "default" }) {
+  const { t } = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
 
   // ─── View mode: "history" vs. "sheet" ─────────────────────────
   const [viewMode, setViewMode] = useState(
-    mode === "history" ? "history" : "sheet"
+    mode === "history" ? "history" : "sheet",
   );
 
   // keep viewMode in sync when mode prop changes
@@ -184,7 +186,7 @@ export default function Stats({ mode = "default" }) {
   // ─── Close sheet (prompt to save, then go back to landing) ───────────────
   const handleCloseSheet = async () => {
     const wantsSave = window.confirm(
-      "Do you want to save your changes before closing?"
+      "Do you want to save your changes before closing?",
     );
 
     if (wantsSave) {
@@ -231,7 +233,7 @@ export default function Stats({ mode = "default" }) {
     const h = ((hh + 11) % 12) + 1;
     return `${String(h).padStart(2, "0")}:${String(mm).padStart(
       2,
-      "0"
+      "0",
     )} ${ampm}`;
   }
 
@@ -261,18 +263,16 @@ export default function Stats({ mode = "default" }) {
           }}
         />
       ) : !LIVE ? (
-        <p className="stats-empty">
-          Click <strong>Stats ▾ → New Stats</strong> to begin.
-        </p>
+        <p className="stats-empty">{t("stats.emptyMessage")}</p>
       ) : (
         <>
           {/* Controls */}
           <div className="stats-controls">
             {canEdit(LIVE) && (
               <>
-                <button onClick={handleSaveSheet}>Save</button>
-                <button onClick={handleCloseSheet}>Close</button>
-                <button onClick={handleResetSheet}>Reset</button>
+                <button onClick={handleSaveSheet}>{t("stats.save")}</button>
+                <button onClick={handleCloseSheet}>{t("stats.close")}</button>
+                <button onClick={handleResetSheet}>{t("stats.reset")}</button>
                 {/* <button onClick={handleCancelSheet}>Cancel</button> */}
               </>
             )}
@@ -283,13 +283,13 @@ export default function Stats({ mode = "default" }) {
                 backgroundColor: isSaved && canEdit(LIVE) ? "green" : "grey",
               }}
             >
-              Send
+              {t("stats.send")}
             </button>
           </div>
 
           {/* A. Timestamp */}
           <section className="stats-section stats-timestamp">
-            <h2>Timestamp</h2>
+            <h2>{t("stats.timestamp")}</h2>
             <Timestamp
               date={LIVE.date}
               startTime={formatTime(LIVE.start_time)}
@@ -299,7 +299,7 @@ export default function Stats({ mode = "default" }) {
 
           {/* B. Mail Opening */}
           <section className="stats-section stats-mail-opening">
-            <h2>Mail Opening</h2>
+            <h2>{t("stats.mailOpening")}</h2>
             <MailOpening
               key={LIVE.id}
               ref={mailOpeningRef}
@@ -310,7 +310,7 @@ export default function Stats({ mode = "default" }) {
           {/* C–F. Processed Mail & Details */}
           <StatsNumbersProvider>
             <section className="stats-section stats-processed-mail">
-              <h2>Processed Mail</h2>
+              <h2>{t("stats.processedMail")}</h2>
               <Processed
                 fileCreationTotal={fileTotal}
                 attachmentsTotal={attachTotal}
@@ -363,7 +363,7 @@ export default function Stats({ mode = "default" }) {
 
           {/* G. Visual Charts */}
           <section className="stats-section stats-charts">
-            <h2>Visual Charts</h2>
+            <h2>{t("stats.visualCharts")}</h2>
             <Charts
               fileCreations={fileTotal}
               attachments={attachTotal}

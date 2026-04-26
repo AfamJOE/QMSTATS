@@ -7,6 +7,8 @@ import {
   Navigate,
   useNavigate,
 } from "react-router-dom";
+import LanguageToggle from "./components/LanguageToggle";
+import { useTranslation } from "react-i18next";
 
 import Stats from "./components/Stats";
 import Group from "./components/Group";
@@ -17,10 +19,10 @@ import AdminHive from "./components/AdminHive";
 import HiveReport from "./print/HiveReport";
 
 export default function App() {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const [statsMenuOpen, setStatsMenuOpen] = useState(false);
   const statsRef = useRef(null);
-
   // derive isAdmin from JWT email
   const isAdmin = useMemo(() => {
     try {
@@ -66,18 +68,18 @@ export default function App() {
             className={`nav-link${statsMenuOpen ? " active" : ""}`}
             onClick={() => setStatsMenuOpen((o) => !o)}
           >
-            Stats ▾
+            {t("nav.stats")} ▾
           </button>
           {statsMenuOpen && (
             <ul className="dropdown-menu">
               <li>
                 <button className="dropdown-link" onClick={openStatsNew}>
-                  New Stats
+                  {t("nav.newStats")}
                 </button>
               </li>
               <li>
                 <button className="dropdown-link" onClick={openStatsHistory}>
-                  History
+                  {t("nav.history")}
                 </button>
               </li>
             </ul>
@@ -91,7 +93,7 @@ export default function App() {
               isActive ? "nav-link active" : "nav-link"
             }
           >
-            Hive
+            {t("nav.hive")}
           </NavLink>
         )}
 
@@ -101,7 +103,7 @@ export default function App() {
             isActive ? "nav-link active" : "nav-link"
           }
         >
-          Group
+          {t("nav.group")}
         </NavLink>
         <NavLink
           to="/app/profile"
@@ -109,7 +111,7 @@ export default function App() {
             isActive ? "nav-link active" : "nav-link"
           }
         >
-          Profile
+          {t("nav.profile")}
         </NavLink>
         <NavLink
           to="/app/invites"
@@ -117,7 +119,7 @@ export default function App() {
             isActive ? "nav-link active" : "nav-link"
           }
         >
-          Invites
+          {t("nav.invites")}
         </NavLink>
         <NavLink
           to="/app/settings"
@@ -125,9 +127,9 @@ export default function App() {
             isActive ? "nav-link active" : "nav-link"
           }
         >
-          Settings
+          {t("nav.settings")}
         </NavLink>
-
+        <LanguageToggle />
         <button onClick={handleLogout} className="logout-button">
           Logout
         </button>

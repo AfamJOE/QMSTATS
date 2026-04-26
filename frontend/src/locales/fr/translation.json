@@ -1,0 +1,50 @@
+{
+  "app": {
+    "name": "QMStats"
+  },
+  "auth": {
+    "loginTitle": "Connexion à QMStats",
+    "registerTitle": "Inscription à QMStats",
+    "email": "Courriel",
+    "password": "Mot de passe",
+    "confirmPassword": "Confirmer le mot de passe",
+    "firstName": "Prénom",
+    "surname": "Nom de famille",
+    "login": "Se connecter",
+    "register": "S’inscrire",
+    "noAccount": "Vous n’avez pas de compte?",
+    "registerHere": "Inscrivez-vous ici",
+    "alreadyAccount": "Vous avez déjà un compte?",
+    "loginHere": "Connectez-vous ici",
+    "loginFailed": "Échec de la connexion",
+    "registrationFailed": "Échec de l’inscription",
+    "registrationSuccess": "Inscription réussie! Redirection vers la connexion…",
+    "passwordMismatch": "Les mots de passe ne correspondent pas",
+    "nameRequired": "Le prénom et le nom de famille sont obligatoires"
+  },
+  "nav": {
+    "stats": "Statistiques",
+    "newStats": "Nouvelles statistiques",
+    "history": "Historique",
+    "hive": "Hive",
+    "group": "Groupe",
+    "profile": "Profil",
+    "invites": "Invitations",
+    "settings": "Paramètres",
+    "logout": "Déconnexion"
+  },
+  "stats": {
+    "timestamp": "Horodatage",
+    "mailOpening": "Ouverture du courrier",
+    "processedMail": "Courrier traité",
+    "fileCreation": "Création de dossiers",
+    "attachments": "Pièces jointes",
+    "rejects": "Rejets",
+    "visualCharts": "Graphiques visuels",
+    "save": "Enregistrer",
+    "close": "Fermer",
+    "reset": "Réinitialiser",
+    "send": "Envoyer",
+    "emptyMessage": "Cliquez sur Statistiques ▾ → Nouvelles statistiques pour commencer."
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "app": {
+    "name": "QMStats"
+  },
+  "auth": {
+    "loginTitle": "QMStats Login",
+    "registerTitle": "QMStats Register",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "firstName": "First Name",
+    "surname": "Surname",
+    "login": "Log In",
+    "register": "Register",
+    "noAccount": "Don’t have an account?",
+    "registerHere": "Register here",
+    "alreadyAccount": "Already have an account?",
+    "loginHere": "Log in here",
+    "loginFailed": "Login failed",
+    "registrationFailed": "Registration failed",
+    "registrationSuccess": "Registration successful! Redirecting to login…",
+    "passwordMismatch": "Passwords do not match",
+    "nameRequired": "First name and surname are required"
+  },
+  "nav": {
+    "stats": "Stats",
+    "newStats": "New Stats",
+    "history": "History",
+    "hive": "Hive",
+    "group": "Group",
+    "profile": "Profile",
+    "invites": "Invites",
+    "settings": "Settings",
+    "logout": "Logout"
+  },
+  "stats": {
+    "timestamp": "Timestamp",
+    "mailOpening": "Mail Opening",
+    "processedMail": "Processed Mail",
+    "fileCreation": "File Creation",
+    "attachments": "Attachments",
+    "rejects": "Rejects",
+    "visualCharts": "Visual Charts",
+    "save": "Save",
+    "close": "Close",
+    "reset": "Reset",
+    "send": "Send",
+    "emptyMessage": "Click Stats ▾ → New Stats to begin."
+  }
+}

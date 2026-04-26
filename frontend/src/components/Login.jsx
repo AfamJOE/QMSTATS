@@ -63,11 +63,16 @@
 //   );
 // }
 
+// src/components/Login.jsx
+
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import api from "../utils/axios";
+import { useTranslation } from "react-i18next";
 
 export default function Login() {
+  const { t } = useTranslation();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -79,19 +84,22 @@ export default function Login() {
 
     try {
       const { data } = await api.post("/auth/login", { email, password });
+
       localStorage.removeItem("qm_token");
       localStorage.setItem("qm_token", data.token);
+
       navigate("/app/stats");
     } catch (err) {
-      setError(err.response?.data?.error || "Login failed");
+      setError(err.response?.data?.error || t("auth.loginFailed"));
     }
   };
 
   return (
     <div className="auth-container">
-      <h2>QMStats Login</h2>
+      <h2>{t("auth.loginTitle")}</h2>
+
       <form className="auth-form" onSubmit={handleSubmit}>
-        <label htmlFor="email">Email</label>
+        <label htmlFor="email">{t("auth.email")}</label>
         <input
           id="email"
           type="email"
@@ -100,7 +108,7 @@ export default function Login() {
           required
         />
 
-        <label htmlFor="password">Password</label>
+        <label htmlFor="password">{t("auth.password")}</label>
         <input
           id="password"
           type="password"
@@ -109,12 +117,14 @@ export default function Login() {
           required
         />
 
-        <button type="submit">Log In</button>
+        <button type="submit">{t("auth.login")}</button>
+
         {error && <p className="auth-error">{error}</p>}
       </form>
 
       <div className="auth-link">
-        Don’t have an account? <Link to="/register">Register here</Link>.
+        {t("auth.noAccount")}{" "}
+        <Link to="/register">{t("auth.registerHere")}</Link>.
       </div>
     </div>
   );

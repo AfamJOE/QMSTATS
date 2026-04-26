@@ -253,3 +253,24 @@ body {
 .dropdown-menu li + li .dropdown-link {
   border-top: 1px solid #eee;
 }
+
+.language-toggle {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+.language-toggle button {
+  padding: 0.35rem 0.55rem;
+  border: 1px solid #ccc;
+  background: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.language-toggle button:disabled {
+  background: #333;
+  color: #fff;
+  cursor: default;
+}
